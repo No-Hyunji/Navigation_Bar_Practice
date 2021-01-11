@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  font-family: Playfair Display SC;
+}
+.nav_container {
+  background-color: #a83b24;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+}
+ul {
+  padding-left: 0;
+}
+.logo {
+  font-size: 20px;
+}
+.logo a {
+  text-decoration: none;
+  color: #561d18;
+}
+.menu {
+  display: flex;
+}
+.menu li {
+  list-style: none;
+  padding: 8px 12px;
+}
+.menu a {
+  text-decoration: none;
+  color: #b47c4b;
+  padding: 8px 12px;
+}
+.menu a:hover {
+  background-color: #d0ac7a;
+  color: black;
+  border-radius: 20px;
+}
+.login_icons {
+  display: flex;
+  font-size: 20px;
+  list-style: none;
+}
+.login_icons li {
+  padding: 8px 12px;
+}
+.login_icons i:hover {
+  cursor: pointer;
+  color: #6a7045;
+}
+
+.toogleBtn {
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color: #561d18;
+}
+
+@media screen and (max-width: 800px) {
+  .nav_container {
+    flex-direction: column;
+    align-items: flex-start;
+    /* flex 디렉션이 column으로 되어있는 와중에 
+    row의 위치를 지정하고 싶음 -> align-items*/
+  }
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    /*넓이가 짧아서 가운데정렬이 
+    안된거기때문에 width를 100%로 지정해줘야함*/
+    width: 100%;
+  }
+  .menu li {
+    width: 100%;
+    text-align: center;
+  }
+  .login_icons {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+  .toogleBtn {
+    display: block;
+  }
+  .menu.active,
+  .login_icons.active {
+    display: flex;
+  }
+}
